@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/tipo-cambio")
 public class TipoCambioController {
 
