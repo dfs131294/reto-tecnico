@@ -19,13 +19,16 @@ public class TipoCambioService {
         this.tipoCambioRepository = tipoCambioRepository;
     }
     public CalcularTipoCambioResponse calcular(CalcularTipoCambioRequest calcularTipoCambioRequest) {
-        String monedaOrigen = calcularTipoCambioRequest.getMonedaOrigen();
-        String monedaDestino = calcularTipoCambioRequest.getMonedaDestino();
+        calcularTipoCambioRequest.toUpperCase();
+
+        String monedaOrigen = calcularTipoCambioRequest.getMonedaOrigen().toUpperCase();
+        String monedaDestino = calcularTipoCambioRequest.getMonedaDestino().toUpperCase();
 
         TipoCambio tipoCambioEntity = tipoCambioRepository.findByMonedaOrigenAndMonedaDestino(monedaOrigen, monedaDestino)
                 .orElseThrow(() -> new TipoCambioException("Tipo de cambio no encontrado"));
 
-        BigDecimal montoConTipoCambio = calcularTipoCambioRequest.getMonto().multiply(tipoCambioEntity.getTipoCambio());
+        BigDecimal montoConTipoCambio = calcularTipoCambioRequest.getMonto()
+                .multiply(tipoCambioEntity.getTipoCambio());
 
         return CalcularTipoCambioResponse.builder()
             .monto(calcularTipoCambioRequest.getMonto())
@@ -42,6 +45,8 @@ public class TipoCambioService {
 
     @Transactional
     public TipoCambioResponse guardar(TipoCambioRequest tipoCambioRequest) {
+        tipoCambioRequest.toUpperCase();
+
         TipoCambio tipoCambio = TipoCambioMapper.MAPPER.dtoToModel(tipoCambioRequest);
         TipoCambio tipoCambioEntity = tipoCambioRepository.save(tipoCambio);
         return TipoCambioMapper.MAPPER.modelToDto(tipoCambioEntity);
@@ -49,6 +54,8 @@ public class TipoCambioService {
 
     @Transactional
     public TipoCambioResponse actualizar(TipoCambioRequest tipoCambioRequest, Long id) {
+        tipoCambioRequest.toUpperCase();
+
         TipoCambio tipoCambioEntity = tipoCambioRepository.findById(id)
                 .orElseThrow(() -> new TipoCambioException("Tipo de cambio no encontrado"));
 
@@ -62,6 +69,8 @@ public class TipoCambioService {
 
     @Transactional
     public TipoCambioResponse actualizarTipoCambio(TipoCambioRequest tipoCambioRequest) {
+        tipoCambioRequest.toUpperCase();
+
         String monedaOrigen = tipoCambioRequest.getMonedaOrigen();
         String monedaDestino = tipoCambioRequest.getMonedaDestino();
 

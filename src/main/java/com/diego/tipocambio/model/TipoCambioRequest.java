@@ -18,4 +18,9 @@ public class TipoCambioRequest {
 
     @NotNull
     private BigDecimal tipoCambio;
+
+    public void toUpperCase(){
+        monedaOrigen = monedaOrigen.toUpperCase();
+        monedaDestino = monedaDestino.toUpperCase();
+    }
 }

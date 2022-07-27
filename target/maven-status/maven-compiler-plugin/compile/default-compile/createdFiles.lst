@@ -1,4 +1,5 @@
 com\diego\tipocambio\model\TipoCambioResponse$TipoCambioResponseBuilder.class
+com\diego\tipocambio\exception\ApiException.class
 com\diego\tipocambio\model\CalcularTipoCambioResponse.class
 com\diego\tipocambio\model\TipoCambio.class
 com\diego\tipocambio\model\CalcularTipoCambioResponse$CalcularTipoCambioResponseBuilder.class
@@ -7,10 +8,13 @@ com\diego\tipocambio\model\TipoCambioResponse.class
 com\diego\tipocambio\RetoApplication.class
 com\diego\tipocambio\controller\TipoCambioController.class
 com\diego\tipocambio\model\TipoCambioRequest$TipoCambioRequestBuilder.class
+com\diego\tipocambio\exception\ApiExceptionHandler.class
 com\diego\tipocambio\model\TipoCambioId.class
 com\diego\tipocambio\model\TipoCambioRequest.class
 com\diego\tipocambio\repository\TipoCambioRepository.class
+com\diego\tipocambio\exception\TipoCambioException.class
 com\diego\tipocambio\mapper\TipoCambioMapperImpl.class
 com\diego\tipocambio\model\CalcularTipoCambioRequest.class
+com\diego\tipocambio\exception\ApiException$ApiExceptionBuilder.class
 com\diego\tipocambio\mapper\TipoCambioMapper.class
 com\diego\tipocambio\model\CalcularTipoCambioRequest$CalcularTipoCambioRequestBuilder.class

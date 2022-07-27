@@ -5,6 +5,7 @@ import com.diego.tipocambio.service.TipoCambioService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,22 +25,22 @@ public class TipoCambioController {
     }
 
     @PostMapping("/calcular")
-    public ResponseEntity<CalcularTipoCambioResponse> calcular(@RequestBody CalcularTipoCambioRequest tipoCambioRequest) {
+    public ResponseEntity<CalcularTipoCambioResponse> calcular(@Valid @RequestBody CalcularTipoCambioRequest tipoCambioRequest) {
         return ResponseEntity.ok().body(tipoCambioService.calcular(tipoCambioRequest));
     }
 
     @PostMapping()
-    public ResponseEntity<TipoCambioResponse> guardar(@RequestBody TipoCambioRequest tipoCambioRequest) {
+    public ResponseEntity<TipoCambioResponse> guardar(@Valid @RequestBody TipoCambioRequest tipoCambioRequest) {
         return ResponseEntity.ok().body(tipoCambioService.guardar(tipoCambioRequest));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TipoCambioResponse> actualizar(@RequestBody TipoCambioRequest tipoCambioRequest, @PathVariable Long id) {
+    public ResponseEntity<TipoCambioResponse> actualizar(@Valid @RequestBody TipoCambioRequest tipoCambioRequest, @PathVariable Long id) {
         return ResponseEntity.ok().body(tipoCambioService.actualizar(tipoCambioRequest, id));
     }
 
     @PostMapping("/actualizar")
-    public ResponseEntity<TipoCambioResponse> actualizarTipoCambio(@RequestBody TipoCambioRequest tipoCambioRequest) {
+    public ResponseEntity<TipoCambioResponse> actualizarTipoCambio(@Valid @RequestBody TipoCambioRequest tipoCambioRequest) {
         return ResponseEntity.ok().body(tipoCambioService.actualizarTipoCambio(tipoCambioRequest));
     }
 }

@@ -12,5 +12,6 @@ public interface TipoCambioMapper {
     TipoCambioMapper MAPPER = Mappers.getMapper(TipoCambioMapper.class);
 
     TipoCambio dtoToModel(TipoCambioRequest tipoCambioRequest);
+
     TipoCambioResponse modelToDto(TipoCambio tipoCambio);
 }
