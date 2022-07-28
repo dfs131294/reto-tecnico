@@ -62,8 +62,10 @@ Para correr con docker:
   
      ```javascript
      {
+       "monto": 23,
+       "montoConTipoCambio": 5.98,
        "monedaOrigen": "SOLES",
        "monedaDestino": "DOLARES",
-       "monto": 23
+       "tipoCambio": 0.26
      }
      ```
