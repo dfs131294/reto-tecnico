@@ -1,0 +1,9 @@
+version: '2'
+services:
+  tipo-cambio:
+    container_name: tipo-cambio-api
+    build:
+      dockerfile: Dockerfile
+    image: tipo-cambio-api:latest
+    ports:
+      - 8080:8080

@@ -28,7 +28,7 @@ public class DetalleUsuarioService implements UserDetailsService {
         return User.builder()
             .username(usuario)
             .password(userRes.getContrasenha())
-            .authorities(Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")))
+            .authorities(Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN")))
             .build();
     }
 }

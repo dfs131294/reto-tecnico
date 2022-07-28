@@ -9,7 +9,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.Instant;
 
 @Component
 public class JWTUtil {
@@ -20,13 +20,16 @@ public class JWTUtil {
     private final static String SUBJECT = "Detalle de Usuario";
     private final static String CLAIM = "usuario";
     private final static String ISSUER = "TIPO-CAMBIO-API";
+    private final static Integer TIEMPO_EXPIRACION_SEG = 300;
 
     public String generarToken(String usuario) throws IllegalArgumentException, JWTCreationException {
         return JWT.create()
             .withSubject(SUBJECT)
             .withClaim(CLAIM, usuario)
-            .withIssuedAt(new Date())
+            .withIssuedAt(Instant.now())
             .withIssuer(ISSUER)
+            .withExpiresAt(Instant.now()
+                    .plusSeconds(TIEMPO_EXPIRACION_SEG))
             .sign(Algorithm.HMAC256(secret));
     }
 
