@@ -58,8 +58,19 @@ Para correr con docker:
       ```
      
 - POST http://localhost:8080/api/v1/tipo-cambio/calcular
-   - Calcular el tipo de cambio según un monto, moneda origen y moneda destino:
+   - Calcula el tipo de cambio según un monto, moneda origen y moneda destino:
   
+   - Request:
+     
+     ```javascript
+     {
+       "monedaOrigen": "SOLES",
+       "monedaDestino": "DOLARES",
+       "monto": 23
+     }
+     ```
+     - Respuesta:
+     
      ```javascript
      {
        "monto": 23,
