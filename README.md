@@ -49,13 +49,13 @@ Para correr con docker:
 - POST http://localhost:8080/api/v1/tipo-cambio/actualizar
     - Actualiza un tipo de cambio usando el siguiente payload:
   
-     ```javascript
-     {
+      ```javascript
+      {
         "monedaOrigen": "SOLES",
         "monedaDestino": "DOLARES",
         "tipoCambio": 2.234
-     }
-     ```
+      }
+      ```
      
 - POST http://localhost:8080/api/v1/tipo-cambio/calcular
    - Calcular el tipo de cambio según un monto, moneda origen y moneda destino:
