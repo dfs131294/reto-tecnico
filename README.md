@@ -22,6 +22,7 @@ Para correr con docker:
 
 - POST http://localhost:8080/api/v1/auth/login
   - Retorna el token JWT usando el siguiente payload:
+  
     ```javascript
     {
       "usuario": "usuario",
@@ -36,6 +37,7 @@ Para correr con docker:
 
 - POST http://localhost:8080/api/v1/tipo-cambio
   - Guarda un nuevo tipo de cambio usando el siguiente payload:
+  
     ```javascript
     {
       "monedaOrigen": "EUROS",
@@ -46,6 +48,7 @@ Para correr con docker:
     
 - POST http://localhost:8080/api/v1/tipo-cambio/actualizar
     - Actualiza un tipo de cambio usando el siguiente payload:
+  
      ```javascript
      {
         "monedaOrigen": "SOLES",
@@ -56,6 +59,7 @@ Para correr con docker:
      
 - POST http://localhost:8080/api/v1/tipo-cambio/calcular
    - Calcular el tipo de cambio según un monto, moneda origen y moneda destino:
+  
      ```javascript
      {
        "monedaOrigen": "SOLES",
