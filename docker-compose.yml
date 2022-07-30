@@ -3,6 +3,7 @@ services:
   tipo-cambio:
     container_name: tipo-cambio-api
     build:
+      context: ./
       dockerfile: Dockerfile
     image: tipo-cambio-api:latest
     ports:
