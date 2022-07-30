@@ -18,7 +18,7 @@ public class JWTUtil {
     private String secret;
 
     private final static String SUBJECT = "Detalle de Usuario";
-    private final static String CLAIM = "usuario";
+    private final static String CLAIM = "Nombre de Usuario";
     private final static String ISSUER = "TIPO-CAMBIO-API";
     private final static Integer TIEMPO_EXPIRACION_SEG = 300;
 
