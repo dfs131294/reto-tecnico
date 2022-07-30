@@ -22,8 +22,8 @@ public class TipoCambioService {
     public CalcularTipoCambioResponse calcular(CalcularTipoCambioRequest calcularTipoCambioRequest) {
         calcularTipoCambioRequest.toUpperCase();
 
-        String monedaOrigen = calcularTipoCambioRequest.getMonedaOrigen().toUpperCase();
-        String monedaDestino = calcularTipoCambioRequest.getMonedaDestino().toUpperCase();
+        String monedaOrigen = calcularTipoCambioRequest.getMonedaOrigen();
+        String monedaDestino = calcularTipoCambioRequest.getMonedaDestino();
 
         TipoCambio tipoCambioEntity = tipoCambioRepository.findByMonedaOrigenAndMonedaDestino(monedaOrigen, monedaDestino)
                 .orElseThrow(() -> new TipoCambioException("Tipo de cambio no encontrado"));
