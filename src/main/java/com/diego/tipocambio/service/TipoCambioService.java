@@ -18,6 +18,7 @@ public class TipoCambioService {
     public TipoCambioService(TipoCambioRepository tipoCambioRepository) {
         this.tipoCambioRepository = tipoCambioRepository;
     }
+
     public CalcularTipoCambioResponse calcular(CalcularTipoCambioRequest calcularTipoCambioRequest) {
         calcularTipoCambioRequest.toUpperCase();
 

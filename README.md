@@ -32,6 +32,9 @@ Para correr con docker:
     
     Este usuario ha sido creado al inicializar la base de datos embebida.
 
+- HEADERS:
+  - Authorization: {JWT_TOKEN}
+
 - GET http://localhost:8080/api/v1/tipo-cambio
   - Retorna los tipos de cambio soportados por el API.
 
