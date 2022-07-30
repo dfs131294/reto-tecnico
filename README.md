@@ -12,7 +12,7 @@ Para construir y correr la aplicación es necesario:
 
 ## Correr la aplicación localmente
 
-- Correr la aplicación en cualquier IDE de preferencia que tenga soporte para Java y Spring Boot.
+- Correr la aplicación en cualquier IDE de preferencia que tenga soporte para Java.
 
 Para correr con docker:
 - Ejecutar el siguiente comando docker-compose up --build
