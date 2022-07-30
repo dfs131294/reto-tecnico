@@ -48,9 +48,15 @@ public class TipoCambioService {
     public TipoCambioResponse guardar(TipoCambioRequest tipoCambioRequest) {
         tipoCambioRequest.toUpperCase();
 
+        String monedaOrigen = tipoCambioRequest.getMonedaOrigen();
+        String monedaDestino = tipoCambioRequest.getMonedaDestino();
+
+        tipoCambioRepository.findByMonedaOrigenAndMonedaDestino(monedaOrigen, monedaDestino)
+                .ifPresent(t -> { throw new TipoCambioException("Este tipo de cambio ya existe"); });
+
         TipoCambio tipoCambio = TipoCambioMapper.MAPPER.dtoToModel(tipoCambioRequest);
-        TipoCambio tipoCambioEntity = tipoCambioRepository.save(tipoCambio);
-        return TipoCambioMapper.MAPPER.modelToDto(tipoCambioEntity);
+        TipoCambio tipoCambioBD = tipoCambioRepository.save(tipoCambio);
+        return TipoCambioMapper.MAPPER.modelToDto(tipoCambioBD);
     }
 
     @Transactional
